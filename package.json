@@ -1,0 +1,14 @@
+{
+  "name": "pp-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:acro5piano/pp-node",
+  "author": "gosho-kazuya <ketsume0211@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "websocket": "^1.0.28"
+  },
+  "devDependencies": {
+    "prettier": "^1.17.1"
+  }
+}
