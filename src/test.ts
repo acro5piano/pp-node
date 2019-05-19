@@ -1,4 +1,4 @@
-const { init, terminate } = require('./pp')
+import { pp, init, terminate } from './pp'
 
 async function test() {
   await init()
@@ -12,7 +12,7 @@ async function test() {
     },
   })
 
-  terminate()
+  setTimeout(terminate, 1000)
 }
 
 test()

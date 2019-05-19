@@ -1,6 +1,6 @@
-const WebSocket = require('ws')
+import WebSocket from 'ws'
 
-module.exports = function start() {
+export function start() {
   const wss = new WebSocket.Server({ port: 3344 })
 
   wss.on('connection', ws => {

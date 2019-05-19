@@ -1,14 +1,15 @@
-const WebSocket = require('ws')
+import WebSocket from 'ws'
 
 class PP {
+  ws!: WebSocket
+
   constructor() {
-    this.ws = null
     this.init = this.init.bind(this)
     this.pp = this.pp.bind(this)
     this.terminate = this.terminate.bind(this)
   }
 
-  pp(args) {
+  pp(args: any) {
     if (this.ws.readyState === 0) {
       console.warn('Error: WebSocket is not open.')
       return
@@ -32,10 +33,8 @@ class PP {
   }
 }
 
-const pp = new PP()
+const _pp = new PP()
 
-exports.init = pp.init
-exports.pp = pp.pp
-exports.terminate = pp.terminate
-
-global.pp = pp.pp
+export const init = _pp.init
+export const pp = _pp.pp
+export const terminate = _pp.terminate
