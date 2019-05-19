@@ -5,10 +5,39 @@
   "repository": "git@github.com:acro5piano/pp-node",
   "author": "gosho-kazuya <ketsume0211@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "pack build"
+  },
   "dependencies": {
     "ws": "^7.0.0"
   },
   "devDependencies": {
+    "@pika/pack": "^0.3.7",
+    "@pika/plugin-build-node": "^0.3.16",
+    "@pika/plugin-simple-bin": "^0.3.16",
+    "@pika/plugin-standard-pkg": "^0.3.16",
     "prettier": "^1.17.1"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg",
+        {
+          "exclude": [
+            "__tests__/**/*"
+          ]
+        }
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-simple-bin",
+        {
+          "bin": "pp-node",
+          "minNodeVersion": 8
+        }
+      ]
+    ]
   }
 }
